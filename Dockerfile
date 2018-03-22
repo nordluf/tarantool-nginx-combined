@@ -199,6 +199,5 @@ RUN apk add --no-cache dumb-init apache2-utils
 COPY ./init.sh /
 COPY ./enabled_auth_basic.conf /etc/nginx/
 COPY ./app.lua /opt/tarantool/
-COPY ./index.html /usr/share/nginx/html/
 ENTRYPOINT ["/usr/bin/dumb-init", "/bin/sh", "-c"]
 CMD ["/init.sh"]
