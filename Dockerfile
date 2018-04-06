@@ -197,7 +197,7 @@ CMD ["nginx", "-g", "daemon off;"]
 MAINTAINER Evgeny Kruglov "ekruglov@gmail.com"
 RUN apk add --no-cache dumb-init apache2-utils
 COPY ./init.sh /
-COPY ./enabled_auth_basic.conf /etc/nginx/
+COPY ./enabled_auth_basic.conf ./tnt_locations.conf /etc/nginx/
 COPY ./app.lua /opt/tarantool/
 ENTRYPOINT ["/usr/bin/dumb-init", "/bin/sh", "-c"]
 CMD ["/init.sh"]

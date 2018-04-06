@@ -9,4 +9,4 @@ else
 fi
 nginx -g "daemon off;" &
 
-/usr/local/bin/tarantool /opt/tarantool/app.lua
+exec /usr/local/bin/tarantool /opt/tarantool/app.lua
