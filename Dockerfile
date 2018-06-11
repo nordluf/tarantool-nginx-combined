@@ -196,6 +196,7 @@ CMD ["nginx", "-g", "daemon off;"]
 
 MAINTAINER Evgeny Kruglov "ekruglov@gmail.com"
 RUN apk add --no-cache dumb-init apache2-utils
+COPY ./tarantool_is_up /usr/local/bin/
 COPY ./init.sh /
 COPY ./enabled_auth_basic.conf ./tnt_locations.conf /etc/nginx/
 COPY ./app.lua /opt/tarantool/
